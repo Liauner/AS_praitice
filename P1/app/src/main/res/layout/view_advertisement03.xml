@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/marqueeview_bg"
+            android:text="热议"
+            android:textColor="#F14C00"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:padding="3dp"
+            android:singleLine="true"
+            android:text="苹果悄然上架一款iPhone，售价三千"
+            android:textColor="#333"
+            android:textSize="14sp"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/marqueeview_bg"
+            android:text="热议"
+            android:textColor="#F14C00"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:padding="3dp"
+            android:singleLine="true"
+            android:text="兰花总是养不好？几招，兰叶狂长！"
+            android:textColor="#333"
+            android:textSize="14sp"
+
+            />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
