@@ -64,6 +64,22 @@ public class RoundIndicatorView extends View {
 
     }
 
+
+    public void setCurrentNumAnim(int num){
+        float duration =(float)Math.abs(num-currentNum)/maxNum*1500+500;
+        ObjectAnimator anim=ObjectAnimator.ofInt(this,"currentNum",num);
+        anim.setDuration((long) Math.min(duration,2000));
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int value=(int) animation.getAnimatedValue();
+                int color=calculateColor(value);
+                setBackgroundColor(color);
+            }
+        });
+        anim.start();
+    }
+
     private void initAttr(AttributeSet attrs){
         TypedArray array=context.obtainStyledAttributes(attrs,R.styleable.RoundIndicatorView);
         maxNum=array.getInt(R.styleable.RoundIndicatorView_maxNum,500);
@@ -88,19 +104,6 @@ public class RoundIndicatorView extends View {
 
 
 
-    public void setCurrentNumAnim(int num){
-        float duration =(float)Math.abs(num-currentNum)/maxNum*1500+500;
-        ObjectAnimator anim=ObjectAnimator.ofInt(this,"currentNum",num);
-        anim.setDuration((long) Math.min(duration,2000));
-        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                int value=(int) animation.getAnimatedValue();
-                int color=calculateColor(value);
-                setBackgroundColor(color);
-            }
-        });
-    }
 
     private int calculateColor(int value){
         ArgbEvaluator evaluator =new ArgbEvaluator();
